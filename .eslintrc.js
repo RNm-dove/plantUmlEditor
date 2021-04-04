@@ -1,11 +1,11 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es2021": true
+  env: {
+    browser: true,
+    es2021: true,
   },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb",
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
     'airbnb/hooks',
     'plugin:import/errors',
     'plugin:import/warnings',
@@ -14,97 +14,99 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-        "jsx": true
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    "project": './tsconfig.eslint.json',
-    "ecmaVersion": 12,
-    "sourceType": "module",
-    "tsconfigRootDir": __dirname,
+    project: './tsconfig.eslint.json',
+    ecmaVersion: 12,
+    sourceType: 'module',
+    tsconfigRootDir: __dirname,
   },
-  "plugins": [
-    "react",
-    'import',
-    'jsx-a11y',
-    "@typescript-eslint",
-    'react-hooks',
-  ],
-  "root": true,
-  "rules": {
+  plugins: ['react', 'import', 'jsx-a11y', '@typescript-eslint', 'react-hooks'],
+  root: true,
+  rules: {
     'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': [
-      'error', 
-    ],
-    'lines-between-class-members': [ 
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'lines-between-class-members': [
       'error',
-      'always', 
+      'always',
       {
-        exceptAfterSingleLine: true
-      }
+        exceptAfterSingleLine: true,
+      },
     ],
     'no-void': [
-      'error', {
-        allowAsStatement: true, 
+      'error',
+      {
+        allowAsStatement: true,
       },
     ],
     'padding-line-between-statements': [
-      'error', {
-        blankLine: 'always', prev: '*',
+      'error',
+      {
+        blankLine: 'always',
+        prev: '*',
         next: 'return',
       },
     ],
-    '@typescript-eslint/no-unused-vars': [ 
+    '@typescript-eslint/no-unused-vars': [
       'error',
       {
-        'vars': 'all',
-        'args': 'after-used',
-        'argsIgnorePattern': '_',
-        'ignoreRestSiblings': false,
-        'varsIgnorePattern': '_',
-      }, 
+        vars: 'all',
+        args: 'after-used',
+        argsIgnorePattern: '_',
+        ignoreRestSiblings: false,
+        varsIgnorePattern: '_',
+      },
     ],
-    'import/extensions': [ 
+    'import/extensions': [
       'error',
-      'ignorePackages', 
+      'ignorePackages',
       {
-        js: 'never', 
-        jsx: 'never', 
-        ts: 'never', 
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
         tsx: 'never',
-      } 
+      },
     ],
-    'react/jsx-filename-extension': [ 
+    'react/jsx-filename-extension': [
       'error',
       {
-        extensions: ['.jsx', '.tsx']
-      } 
+        extensions: ['.jsx', '.tsx'],
+      },
     ],
-    'react/jsx-props-no-spreading': [ 
+    'react/jsx-props-no-spreading': [
       'error',
       {
         html: 'enforce',
-        custom: 'enforce', 
+        custom: 'enforce',
         explicitSpread: 'ignore',
-      }, 
+      },
     ],
     'react/react-in-jsx-scope': 'off',
+    'import/prefer-default-export': 'off',
+    'import/order': [
+      'warn',
+      {
+        alphabetize: { order: 'asc' },
+        'newlines-between': 'always',
+      },
+    ],
   },
-  overrides: [ 
+  overrides: [
     {
-      'files': ['*.tsx'],
-      'rules': {
-      'react/prop-types': 'off',
+      files: ['*.tsx'],
+      rules: {
+        'react/prop-types': 'off',
       },
     },
   ],
-  settings: { 
+  settings: {
     'import/resolver': {
       node: {
         paths: ['src'],
-      }, 
+      },
     },
   },
-}
-
+};
