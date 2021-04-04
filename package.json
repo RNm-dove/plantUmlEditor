@@ -12,6 +12,7 @@
     }
   },
   "dependencies": {
+    "@craco/craco": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^13.1.1",
@@ -28,14 +29,14 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "react-start": "react-scripts start",
-    "react-build": "react-scripts build",
-    "react-test": "react-scripts test",
+    "react-start": "craco start",
+    "react-build": "craco build",
+    "react-test": "craco test",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:conflict":"eslint--print-config.eslintrc.js|eslint-config-prettier-check",
-    "fix":"npmrun-sformat&&npmrun-slint:fix",
-    "format":"prettier--write--loglevel=warn'src/**/*.{js,jsx,ts,tsx,gql,graphql,json}'",
+    "lint:conflict": "eslint--print-config.eslintrc.js|eslint-config-prettier-check",
+    "fix": "npmrun-sformat&&npmrun-slint:fix",
+    "format": "prettier--write--loglevel=warn'src/**/*.{js,jsx,ts,tsx,gql,graphql,json}'",
     "postinstall": "typesync",
     "electron-build": "electron-builder",
     "release": "yarn react-build && electron-builder --publish=always",
@@ -61,18 +62,24 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.4",
+    "@types/autoprefixer": "^9.7.2",
     "@types/concurrently": "^6.0.1",
     "@types/prettier": "^2.2.3",
     "@types/testing-library__jest-dom": "^5.9.5",
+    "@types/testing-library__user-event": "^4.2.0",
     "@types/wait-on": "^5.2.0",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "autoprefixer": "^9",
     "concurrently": "^6.0.0",
     "electron": "^12.0.2",
     "electron-builder": "^22.10.5",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-react": "^7.21.5",
+    "postcss": "^7",
     "prettier": "^2.2.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typesync": "^0.8.0",
     "wait-on": "^5.3.0"
   }
