@@ -1,0 +1,13 @@
+title Sequence Sample 1 
+
+hide footbox
+
+Actor User
+
+User -> React: Manipulate UI
+React -> NodeJS: Request something
+Database Postgres
+NodeJS -> Postgres: Request some info
+Postgres --> NodeJS: Response
+NodeJS --> React: Response
+React --> User: Display some info

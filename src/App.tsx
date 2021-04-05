@@ -1,14 +1,16 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
+import { RecoilRoot } from 'recoil';
 
 import { MainPane } from 'components/snowFlakes/MainPane';
 import { SidePane } from 'components/snowFlakes/SidePane';
-import './App.css';
 
 const App: FC = () => (
-  <div className="App">
-    <SidePane />
-    <MainPane />
-  </div>
+  <RecoilRoot>
+    <div className="flex h-screen">
+      <SidePane className="flex-shrink-0" />
+      <MainPane className="flex-grow" />
+    </div>
+  </RecoilRoot>
 );
 
 export default App;

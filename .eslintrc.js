@@ -13,6 +13,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'prettier',
+    'plugin:tailwind/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,7 +25,14 @@ module.exports = {
     sourceType: 'module',
     tsconfigRootDir: __dirname,
   },
-  plugins: ['react', 'import', 'jsx-a11y', '@typescript-eslint', 'react-hooks'],
+  plugins: [
+    'react',
+    'import',
+    'jsx-a11y',
+    '@typescript-eslint',
+    'react-hooks',
+    'sort-clsx',
+  ],
   root: true,
   rules: {
     'no-use-before-define': 'off',
@@ -87,12 +95,14 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'import/prefer-default-export': 'off',
     'import/order': [
+      //
       'warn',
       {
         alphabetize: { order: 'asc' },
         'newlines-between': 'always',
       },
     ],
+    'sort-clsx/sortClsx': 'error',
   },
   overrides: [
     {
